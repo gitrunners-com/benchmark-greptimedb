@@ -1,25 +1,5 @@
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - 'docs/**'
-      - 'config/**'
-      - '**.md'
-      - '.dockerignore'
-      - 'docker/**'
-      - '.gitignore'
-  push:
-    branches:
-      - develop
-      - main
-    paths:
-      - 'docs/**'
-      - 'config/**'
-      - '**.md'
-      - '.dockerignore'
-      - 'docker/**'
-      - '.gitignore'
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 name: CI
 
@@ -32,24 +12,24 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "No action required"'
+    - run: 'echo "No action required"'
 
   fmt:
     name: Rustfmt
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "No action required"'
+    - run: 'echo "No action required"'
 
   clippy:
     name: Clippy
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "No action required"'
+    - run: 'echo "No action required"'
 
   coverage:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "No action required"'
+    - run: 'echo "No action required"'
